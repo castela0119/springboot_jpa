@@ -11,7 +11,7 @@ import java.util.List;
 
 // fixme - JPA 의 모든 데이터 변경이나 로직들은 transaction 안에서 실행되어야 한다.
 // fixme - 스프링에서 제공하는 taransactional 어노테이션을 사용해야 쓸 수 있는 옵션이 많다.★
-// 단순 조회에서는 @Transactional(readOnly = true) 을 하면 속도가 빨라진다.
+// fixme - 단순 조회에서는 @Transactional(readOnly = true) 을 하면 속도가 빨라진다.
 
 @Service
 @Transactional(readOnly = true)
@@ -40,12 +40,12 @@ public class MemberService {
         }
     }
 
-    // 회원 전체 조회 -
+    // 회원 전체 조회
     public List<Member> findMembers() {
         return memberRepository.findAll();
     }
     
-    // 회원 단건 조회 - 단순 조회에서는 @Transactional(readOnly = true) 을 하면 속도가 빨라진다.
+    // 회원 단건 조회
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
