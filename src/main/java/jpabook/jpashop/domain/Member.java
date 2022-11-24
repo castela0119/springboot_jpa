@@ -24,4 +24,5 @@ public class Member {
 
     @OneToMany(mappedBy = "member") // Order 테이블에 있는 member 필드에의해 맵핑된거야, mappedBy 는 저것에 의해 맵핑된 거울일뿐야 라고 알려주는 것.
     private List<Order> orders = new ArrayList<>();
+
 }
